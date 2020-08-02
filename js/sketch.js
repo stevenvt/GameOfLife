@@ -22,6 +22,8 @@ function setup() {
     next[i] = new Array(rows);
   }
   init();
+  frameRate(10);
+  noLoop();
 }
 
 function draw() {
@@ -40,7 +42,7 @@ function draw() {
 
 // reset board when mouse is pressed
 function mousePressed() {
-  init();
+  
 }
 
 // Fill board randomly
@@ -54,6 +56,7 @@ function init() {
       next[i][j] = 0;
     }
   }
+  loop();
 }
 
 // The process of creating the new generation
@@ -85,5 +88,9 @@ function generate() {
   let temp = board;
   board = next;
   next = temp;
+}
+
+function pauseGame(){
+
 }
 
